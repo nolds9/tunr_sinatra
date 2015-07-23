@@ -3,6 +3,6 @@
 </h2>
 <% @songs.each do |song| %>
   <ul>
-    <li><a href="/songs/<%= song.id %>"><%= song.title %></a></li>
+    <li><a href="/songs/<%= song.id %>"><%= song.title %>-<%= song.artist.name %></a></li>
   </ul>
 <% end %>
