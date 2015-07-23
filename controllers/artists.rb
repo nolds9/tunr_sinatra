@@ -1,24 +1,24 @@
 # controllers/artists.rb
 
-# index
-get '/artists' do
+# index route (REST)
+get "/artists" do
   @artists = Artist.all
   erb :"artists/index"
 end
 
-# show
-get '/artists/:id' do
-  @artist = Artist.find(params[:id])
-  erb :"artists/show"
-end
-
-# new
+# new route
 get "/artists/new" do
   erb :"artists/new"
 end
 
-# create
-post '/artists' do
+# show route
+get "/artists/:id" do
+  @artist = Artist.find(params[:id])
+  erb :"artists/show"
+end
+
+# create route
+post "/artists" do
   @artist = Artist.create(params[:artist])
   redirect "/artists/#{@artist.id}"
 end
@@ -30,5 +30,15 @@ get "/artists/:id/edit" do
 end
 
 # update
+put '/artists/:id' do
+  @artist = Artist.find(params[:id])
+  @artist.update(params[:artist])
+  redirect "/artists/#{@artist.id}"
+end
 
 # destroy
+delete '/artists/:id' do
+  @artist = Artist.find(params[:id])
+  @artist.destroy
+  redirect "/artists"
+end

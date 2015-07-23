@@ -5,4 +5,11 @@
   <p>
     <%= @artist.nationality %>
   </p>
+    <img class="artist-photo" src="<%= @artist.photo_url %>" />
+    <h4>Songs</h4>
+    <% @artist.songs.each do |song| %>
+      <ul>
+        <li><a href="/songs/<%= song.id %>"><%= song.title %></a></li>
+      </ul>
+    <% end %>
 </div>

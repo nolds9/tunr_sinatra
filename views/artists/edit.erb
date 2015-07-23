@@ -1,1 +1,22 @@
-edit form goes here
+<h2>Edit Artist</h2>
+
+<form method="post" action="/artists/<%= @artist.id %>">
+  <input type="hidden" name="_method" value="put">
+
+  <label for="artist[name]">Name:</label>
+  <input type="text" name="artist[name]" value="<%= @artist.name %>">
+
+  <label for="artist[photo_url]">Photo URL:</label>
+  <input type="text" name="artist[photo_url]" value="<%= @artist.photo_url %>">
+
+  <label for="artist[nationality]">Nationality:</label>
+  <input type="text" name="artist[nationality]" value="<%= @artist.nationality %>">
+
+  <input type="submit" value="Update">
+
+</form>
+
+<form method="post" action="/artists/<%= @artist.id %>">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete">
+</form>

@@ -11,7 +11,7 @@ require_relative 'models/song'
 
 # Load controllers
 require_relative 'controllers/artists'
-
+require_relative 'controllers/songs'
 
 ####################
 #  General routes  #
